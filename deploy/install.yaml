@@ -256,7 +256,7 @@ spec:
     spec:
       serviceAccountName: imageswap-sa
       securityContext:
-        runAsUser: 1000640000
+        runAsUser: 1000650000
       initContainers:
         - name: imageswap-init
           image: thewebroot/imageswap-init:v0.0.1
