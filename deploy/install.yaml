@@ -256,8 +256,7 @@ spec:
     spec:
       serviceAccountName: imageswap-sa
       securityContext:
-        runAsUser: 1898
-        runAsGroup: 1898
+        runAsUser: 1000640000
       initContainers:
         - name: imageswap-init
           image: thewebroot/imageswap-init:v0.0.1
@@ -284,7 +283,7 @@ spec:
               mountPath: /mwc
       containers:
       - name: imageswap
-        image: thewebroot/imageswap:v1.3.0
+        image: darroyo/imageswap:v1.3.0
         ports:
         - containerPort: 5000
         command: ["gunicorn", "imageswap:app", "--config=config.py"]

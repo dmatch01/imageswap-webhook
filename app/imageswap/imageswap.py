@@ -203,7 +203,8 @@ def swap_image(container_spec):
         app.logger.info(f"External image definition detected: {image}")
         app.logger.info(f"External image updated to Internal image: {new_image}")
 
-        container_spec["image"] = new_image
+        #container_spec["image"] = new_image
+        container_spec["imagePullPolicy"] = "IfNotPresent"
 
         return True
 
